@@ -1,0 +1,50 @@
+class Mobiles(models.Model):
+    name=models.CharField(max_length=200,unique=True)
+    price=models.PositiveIntegerField()
+    brand=models.CharField(max_length=200)
+    specs=models.CharField(max_length=200)
+    display=models.CharField(max_length=200,null=True)
+
+    orm querreys:
+    modelname.object.create(filedname=value,.....)
+
+    eg: orm q for creating an
+from mobile.models import Mobiles
+
+Mobiles.objects.create(name="samsung m30",price=27000,specs="12gb ram",display="anolqaud",brand="samsung")
+==================================================================================================================
+
+
+orm querrey for delecting a specific object
+
+qs=Mobiles.objects.get(id=2)
+
+==========================================
+orm querrey for filtering object
+
+qs=Mobiles.objects.filter(brand="samsung")
+==============================================
+qs=Mobiles.objects.filter(price__lte=60000)
+lte=less than equalto <=
+gte=grether than equalto >=
+
+< __lt
+> __gt
+
+
+orm querrey for delecting an object
+Mobiles.objects.filter(id=3).delete()
+
+
+
+orm querrey for updateing an object
+
+Mobiles.objects.filter(id=1).update(price=30000,specs="2gb")
+qs=Mobiles.objects.all().order_by("price")               ========= asenting order
+qs=Mobiles.objects.all().order_by("-price")              ========= desenting order
+
+
+======================================================================================================
+
+
+qs=Mobiles.objects.all().values_list("brand",flat=True)

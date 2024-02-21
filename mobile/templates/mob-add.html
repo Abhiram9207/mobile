@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block body_block%}
+<div class="container d-flex justify-content-center mt-5 mb-5">
+    <form action=""  method="post" enctype="multipart/form-data" class="w-50 border shadow p-5 ">
+        <h2 class="text-center fw-bolder pb-3">Add Mobile</h2>
+        {%csrf_token%}
+        <div>
+        {{form.as_p}}
+        </div>
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-info rounded w-25 fw-semibold">
+            ADD
+
+        </button>
+        </div>
+
+    </form>
+</div>
+
+{%endblock%}
